@@ -1,6 +1,6 @@
 <template>
     <div id="employee-form">
-        <form>
+        <form @submit.prevent="handleSubmit">
             <input v-model="employee.name" type="text" placeholder="社員名" />
             <input v-model="employee.email" type="text" placeholder="社員メール" />
             <button>社員登録</button>
