@@ -1,8 +1,8 @@
 <template>
     <div id="employee-form">
         <form>
-            <input type="text" placeholder="社員名" />
-            <input type="text" placeholder="社員メール" />
+            <input v-model="employee.name" type="text" placeholder="社員名" />
+            <input v-model="employee.email" type="text" placeholder="社員メール" />
             <button>社員登録</button>
         </form>
     </div>
