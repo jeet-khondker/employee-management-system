@@ -8,6 +8,7 @@
                 :class="{ 'has-error': submitting && invalidName }" 
                 @focus="clearStatus" 
                 @keypress="clearStatus"
+                ref="first"
             />
             <input 
                 v-model="employee.email" 
@@ -52,6 +53,7 @@
                 }
 
                 this.$emit("addemployee", this.employee)
+                this.$refs.first.focus()
 
                 this.employee = {
                     name: '',
