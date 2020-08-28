@@ -12,28 +12,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
+                <tr v-for="employee in employees" :key="employee.id">
                     <td>
-                        桑村
+                        {{ employee.name }}
                     </td>
                     <td>
-                        tokio.kuwamura@code.com
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        鈴木
-                    </td>
-                    <td>
-                        ayumu.suzuki@code.com
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        長友
-                    </td>
-                    <td>
-                        syouya.nagatomo@code.com
+                        {{ employee.email }}
                     </td>
                 </tr>
             </tbody>
@@ -44,6 +28,9 @@
 <script>
     export default {
         name: "employee-list",
+        props: {
+            employees: Array,
+        },
     }
 </script>
 

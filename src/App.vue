@@ -2,7 +2,7 @@
   <div id="app" class="container">
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>社員管理システム</h1>
-    <employee-list />
+    <employee-list v-bind:employees="employees"/>
   </div>
 </template>
 
@@ -13,7 +13,28 @@ export default {
   name: 'App',
   components: {
     EmployeeList
-  }
+  },
+  data() {
+    return {
+      employees: [
+        {
+          id: 1,
+          name: "桑村",
+          email: "tokio.kuwamura@code.com",
+        },
+        {
+          id: 2,
+          name: "鈴木",
+          email: "ayumu.suzuki@code.com",
+        },
+        {
+          id: 3,
+          name: "長友",
+          email: "syouya.nagatomo@code.com",
+        },
+      ],
+    }
+  },
 }
 </script>
 
