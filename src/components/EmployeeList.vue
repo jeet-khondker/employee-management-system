@@ -1,4 +1,5 @@
 <template>
+    <h3>社員情報一覧</h3>
     <div id="employee-list">
         <table>
             <thead>
