@@ -19,6 +19,11 @@
                 },
             }
         },
+        methods: {
+            handleSubmit() {
+                console.log("handleSubmitをテストしています")
+            },
+        },
     }
 </script>
 
