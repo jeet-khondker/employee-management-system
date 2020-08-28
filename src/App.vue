@@ -1,28 +1,45 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>社員管理システム</h1>
+    <employee-list />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import EmployeeList from '@/components/EmployeeList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    EmployeeList
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  body {
+    background: #E5E5E5;
+  }
+
+  #app {
+    text-align: center;
+    margin: 50px 200px;
+  }
+
+  .container {
+      max-width: 100%;
+  }
+
+  button {
+    background: #fff;
+    border: 3px solid #013cff;
+    color: #000;
+  }
+  button:hover {
+    background: #013cff;
+    color: #fff;
+    border: 3px solid #fff;
+
+  }
 </style>

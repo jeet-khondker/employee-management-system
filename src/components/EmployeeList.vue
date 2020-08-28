@@ -48,5 +48,13 @@
 </script>
 
 <style scoped>
+    #employee-list {
+        background: #EFF2F5;
+        color: #000;
+    }
 
+    thead {
+        background: #000;
+        color: #fff;
+    }
 </style>
