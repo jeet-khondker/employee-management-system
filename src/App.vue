@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>社員管理システム</h1>
 
-    <employee-form />
+    <employee-form v-on:addemployee="addEmployee"/>
     <employee-list v-bind:employees="employees"/>
   </div>
 </template>
@@ -39,6 +39,14 @@
         ],
       }
     },
+    methods: {
+      addEmployee(employee) {
+        const lastId = this.employees.length > 0 ? this.employees[this.employees.length - 1].id : 0;
+        const id = lastId + 1;
+        const newEmployee = { ...employee, id };
+        this.employees = [...this.employees, newEmployee]
+      }
+    }
   }
 </script>
 

@@ -1,9 +1,9 @@
 <template>
     <div id="employee-form">
         <form @submit.prevent="handleSubmit">
-            <input v-model="employee.name" type="text" placeholder="社員名" />
-            <input v-model="employee.email" type="text" placeholder="社員メール" />
-            <button>社員登録</button>
+            <input v-model="employee.name" type="text" placeholder="新社員名" />
+            <input v-model="employee.email" type="text" placeholder="新社員メール" />
+            <button>新社員登録</button>
         </form>
     </div>
 </template>
@@ -21,7 +21,7 @@
         },
         methods: {
             handleSubmit() {
-                console.log("handleSubmitをテストしています")
+                this.$emit("addemployee", this.employee)
             },
         },
     }
