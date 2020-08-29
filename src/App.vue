@@ -4,7 +4,11 @@
     <h1>社員管理システム</h1>
 
     <employee-form v-on:addemployee="addEmployee"/>
-    <employee-list :employees="employees" v-on:deleteemployee="deleteEmployee" />
+    <employee-list 
+      :employees="employees" 
+      v-on:deleteemployee="deleteEmployee" 
+      v-on:editemployee="editEmployee"
+    />
   </div>
 </template>
 
@@ -45,6 +49,9 @@
         const id = lastId + 1;
         const newEmployee = { ...employee, id };
         this.employees = [...this.employees, newEmployee]
+      },
+      editEmployee(id, updatedEmployee) {
+        this.employees = this.employees.map(employee => employee.id === id ? updatedEmployee : employee)
       },
       deleteEmployee(id) {
         this.employees = this.employees.filter(employee => employee.id !== id)
