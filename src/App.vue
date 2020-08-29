@@ -4,7 +4,7 @@
     <h1>社員管理システム</h1>
 
     <employee-form v-on:addemployee="addEmployee"/>
-    <employee-list v-bind:employees="employees"/>
+    <employee-list :employees="employees" v-on:deleteemployee="deleteEmployee" />
   </div>
 </template>
 
@@ -45,6 +45,9 @@
         const id = lastId + 1;
         const newEmployee = { ...employee, id };
         this.employees = [...this.employees, newEmployee]
+      },
+      deleteEmployee(id) {
+        this.employees = this.employees.filter(employee => employee.id !== id)
       }
     }
   }
@@ -62,17 +65,5 @@
 
   .container {
       max-width: 100%;
-  }
-
-  button {
-    background: #fff;
-    border: 3px solid #013cff;
-    color: #000;
-  }
-  button:hover {
-    background: #013cff;
-    color: #fff;
-    border: 3px solid #fff;
-
   }
 </style>
