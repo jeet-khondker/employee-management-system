@@ -23,7 +23,7 @@
             <p v-if="success" class="success-message">
                 ✅ 新社員が成功に登録されました！
             </p>
-            <button>新社員登録</button>
+            <button class="add">✚ 新社員登録</button>
         </form>
     </div>
 </template>
@@ -108,5 +108,16 @@
         color: #000;
         padding: 10px;
         background: #84fdb1;
+    }
+
+    button.add {
+        background: #fff;
+        border: 3px solid #013cff;
+        color: #000;
+    }
+    button.add:hover {
+        background: #013cff;
+        color: #fff;
+        border: 3px solid #fff;
     }
 </style>
