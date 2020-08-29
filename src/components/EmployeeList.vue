@@ -116,13 +116,13 @@
         background: #fff;
         border: 3px solid #5d6d06;
         color: #000;
-        margin: 0 10px 0 0;
+        margin: 0 10px 0 140px;
     }
     button.save:hover {
         background: #5d6d06;
         color: #fff;
         border: 3px solid #fff;
-        margin: 0 10px 0 0;
+        margin: 0 10px 0 140px;
     }
 
     button.cancel {

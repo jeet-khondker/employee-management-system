@@ -1,76 +1,46 @@
 <template>
-  <div id="app" class="container">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <h1>社員管理システム</h1>
-
-    <employee-form v-on:addemployee="addEmployee"/>
-    <employee-list 
-      :employees="employees" 
-      v-on:deleteemployee="deleteEmployee" 
-      v-on:editemployee="editEmployee"
-    />
+  <div id="app">
+    <div id="nav">
+      <img alt="Vue logo" src="./assets/logo.png">
+      <h1>社員管理システム</h1>
+      <br/>
+      <router-link to="/">ダッシュボード</router-link>
+      <router-link to="/about">説明</router-link>
+    </div>
+    <router-view/>
   </div>
 </template>
 
-<script>
-  import EmployeeList from '@/components/EmployeeList.vue'
-  import EmployeeForm from '@/components/EmployeeForm.vue'
-
-  export default {
-    name: 'App',
-    components: {
-      EmployeeList,
-      EmployeeForm
-    },
-    data() {
-      return {
-        employees: [
-          {
-            id: 1,
-            name: "桑村",
-            email: "tokio.kuwamura@code.com",
-          },
-          {
-            id: 2,
-            name: "鈴木",
-            email: "ayumu.suzuki@code.com",
-          },
-          {
-            id: 3,
-            name: "長友",
-            email: "syouya.nagatomo@code.com",
-          },
-        ],
-      }
-    },
-    methods: {
-      addEmployee(employee) {
-        const lastId = this.employees.length > 0 ? this.employees[this.employees.length - 1].id : 0;
-        const id = lastId + 1;
-        const newEmployee = { ...employee, id };
-        this.employees = [...this.employees, newEmployee]
-      },
-      editEmployee(id, updatedEmployee) {
-        this.employees = this.employees.map(employee => employee.id === id ? updatedEmployee : employee)
-      },
-      deleteEmployee(id) {
-        this.employees = this.employees.filter(employee => employee.id !== id)
-      }
-    }
-  }
-</script>
-
 <style>
-  body {
-    background: #E5E5E5;
+
+  #nav {
+    padding: 30px;
+    background: #83e8f5;
   }
 
-  #app {
-    text-align: center;
-    margin: 50px 200px;
+  #nav a {
+    font-weight: bold;
+    color: #fff;
+    margin: 0 50px;
+    border: 1px solid #000;
+    padding: 10px 50px;
+    border-radius: 50px;
+    background: #000;
   }
 
-  .container {
-      max-width: 100%;
+  #nav a.router-link-exact-active {
+    color: #fce301;
+    text-decoration: none;
+  }
+
+  #nav a:hover {
+    font-weight: bold;
+    color: #000;
+    margin: 0 50px;
+    border: 1px solid #000;
+    padding: 10px 50px;
+    border-radius: 50px;
+    background: #fff;
+    text-decoration: none;
   }
 </style>
