@@ -15,11 +15,18 @@
   import EmployeeList from '@/components/EmployeeList.vue'
   import EmployeeForm from '@/components/EmployeeForm.vue'
 
+  import firebase from "firebase"
+
   export default {
     name: 'Home',
     components: {
       EmployeeList,
       EmployeeForm
+    },
+    created() {
+      firebase.database().ref('/').once("value", function (snapshot) {
+        console.log(snapshot.val())
+      })
     },
     data() {
       return {
