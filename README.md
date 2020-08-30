@@ -1,4 +1,4 @@
-# employee-management-system
+# 社員管理システム
 
 ## Project setup
 ```
